@@ -1,0 +1,110 @@
+<html>
+    <head>
+        <style>      
+
+            .estile{
+                background-color: transparent;
+                border: none;
+                color: white;
+                margin-left: -5px;
+                padding: 10px 15px;
+                padding-bottom: 14px;
+                text-align: center;
+                text-decoration: none;
+                border-bottom: 2px solid #A6ABA6;
+                display: inline-block;
+                font-size: 16px;
+            } 
+
+            #display !important{
+                position: relative;
+                width: 200px;
+                height: 25px;}
+
+            h3 {
+                font-weight: 400;
+                margin-top: 10px;
+                margin-left: 10px;
+                font-family: "Segoe UI",Arial,sans-serif;
+                font-size: 24px;}
+
+            #div1 {
+                border-style: white;
+                border-radius:8px;
+                width: 250px;
+                height: 250px;
+                position: absolute;
+                text-align: center;
+                padding-top: 30px;
+                background-color: #628C80;
+                margin-top: 30px;
+                margin-left: 300px}
+
+            .btn {
+                text-align: center;
+                font-size: 30;
+                width: 150px;
+                margin-left: 5px;
+                list-style-type: none;
+                column-count: 4;
+            }
+
+            .btn li {
+                padding: 7px;
+                vertical-align: middle;
+                width: 50px;
+                height: 25px;
+                float: left;
+                border-radius: 4px;
+            }
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="div1">
+            <input type="text" value="" id="display">
+            <ul class="btn" id="cal">
+                <input class="estile" type="button" value="7" id="7" onclick="e(id)">
+                <input class="estile" type="button" value="4" id="4" onclick="e(id)">
+                <input class="estile" type="button" value="1" id="1" onclick="e(id)">
+                <input class="estile" type="button" value="0" id="0" onclick="e(id)">
+                <input class="estile" type="button" value="8" id="8" onclick="e(id)">
+                <input class="estile" type="button" value="5" id="5" onclick="e(id)">
+                <input class="estile" type="button" value="2" id="2" onclick="e(id)">
+                <input class="estile" type="button" value="-" id="menos" onclick="e(id)">
+                <input class="estile" type="button" value="9" id="9" onclick="e(id)">
+                <input class="estile" type="button" value="6" id="6" onclick="e(id)">
+                <input class="estile" type="button" value="3" id="3" onclick="e(id)">
+                <input class="estile" type="button" value="+" id="mas" onclick="e(id)">
+                <input class="estile" type="button" value="C" id="borrar" onclick="borrar()">
+                <input style="margin-right: 5px;" class="estile" type="button" value="*" id="mult" onclick="e(id)">
+                <input class="estile" type="button" value="/" id="div" onclick="e(id)">
+                <input class="estile" type="button" value="=" id="igu" onclick="total()">
+            </ul>
+        </div>
+        <script>
+
+            function e(id){
+                var primero=document.getElementById(id);
+                var segundo=document.getElementById('display');
+                var total=segundo.value + primero.value;
+                document.getElementById('display').value=total;
+
+            }
+
+
+            function borrar(){
+                document.getElementById('display').value="";
+            }
+
+            function total(){ 
+                var tt = document.getElementById('display').value;
+                var print = eval(tt);
+                document.getElementById('display').value = print;}
+
+        </script>
+    </body>
+</html>

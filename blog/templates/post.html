@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+
+<!-- Post  -->
+<div class="blog-title" style="margin-top:3%;margin-left:0%"><h3>{{ post.title }}</h3>
+</div>
+<div>
+    {% if post.url_post|length > 0 %}
+    {% include post.url_post %}
+    {% else %}
+    {{post.body}}
+    {% endif %}
+</div>
+
+{% endblock %}
+

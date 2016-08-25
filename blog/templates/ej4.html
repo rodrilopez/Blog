@@ -1,0 +1,121 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+
+    <head>
+        <style>
+            .div1{
+                background-color: #bebebe;
+                border-radius: 4px;
+                width: 400px;
+                margin-top: 100px;
+                margin-left: 275px;
+            }
+
+            #dis{
+                position:relative;
+                margin-left: 15px;
+                width: 150px}
+
+            #dis1{
+                position:relative;
+                margin-right: 15px;
+                width: 150px}
+
+            #pri {
+                width: 900px
+                    margin-left: 50px;
+                height: 435px;
+            }
+
+            .btn {
+                background-color: #4CAF50;
+                border: none;
+                border-radius: 4px;
+                color: white;
+                padding: 10px 15px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 13px;
+                margin-left: 70px;
+            }
+
+            #btnpu {
+                margin-left: 40px;
+            }
+
+            .cmbox {
+                border-radius: 12px;
+                border: none;
+                background-color: #26A69A;
+                color: black;
+                padding: 10px 27px;
+                text-align: center;
+                text-decoration: none;
+                font-size: 16px;
+            }
+
+            #cmbox {
+                margin-left: 43px;
+            }
+
+        </style>
+    </head>  
+    <body>
+
+        <div class="div1">
+            <select class="cmbox" id="cmbox" onchange="changebox()">
+                <option value="0">Select</option>
+                <option value="1">USD</option>
+                <option value="0.068">ARS</option>
+                <option value="1.127">EU</option>
+                <option value="0.0015">CLP</option>
+                <option value="0.031">UYU</option>
+                <option value="0.27">BRL</option>
+            </select>
+            to
+            <select class="cmbox" id="cmbox1">
+                <option value="0">Select</option>
+                <option value="1">USD</option>
+                <option value="0.068">ARS</option>
+                <option value="1.127">EU</option>
+                <option value="0.0015">CLP</option>
+                <option value="0.031">UYU</option>
+                <option value="0.27">BRL</option>
+            </select>
+            <p>
+                <input type="text" value="" id="dis"/>
+                to
+                <input type="text" value="" id="dis1"/>
+            </p>
+            <button class="btn" onclick="calcular()">Calculate</button>
+            <button id="btnpu" class="btn" onclick="borrar()">Clean</button>
+        </div>
+
+        <script>
+            
+        function changebox(){
+            console.log("aca");
+        }
+
+        function borrar(){
+            var nada="";
+            document.getElementById('dis').value=nada;
+            document.getElementById('dis1').value=nada;
+        }
+
+        function calcular(){
+            if(document.getElementById('cmbox').value != 0 & document.getElementById('cmbox1').value != 0){
+                var m1 = document.getElementById('cmbox').value;
+                var m2 = document.getElementById('cmbox1').value;
+                var tt = (m1 * document.getElementById('dis').value)/m2;
+                var total = eval(tt);
+                document.getElementById('dis1').value = total;
+            }
+        }
+        
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,37 @@
+{% load static %}
+{% load staticfiles %}
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <script src="js/blog.js"></script>
+        <title>Rodri's Blog</title>
+        <div class="title">
+            <a id="ho" href="http://127.0.0.1:8000">Rodri's Blog<j>.com</j></a>
+        </div>
+        <div class="sub-title">
+            THE BEST WEB SITE ON THE WORLD
+        </div>
+    </head>
+    <body>
+        <p>
+            
+        <div class="propaganda" id="propaganda">
+            
+
+        </div>
+        <div class="principal" style="overflow-y: scroll;">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" type="text/javascript"></script>
+    <script>
+
+        $.ajax({
+            url: "{% url 'index:commentarios' %}",
+        }).success(function(data) {
+            $( "#propaganda" ).html(data);
+        });
+
+    </script>
+</html>

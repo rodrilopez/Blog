@@ -1,0 +1,114 @@
+{% load static %}
+{% load staticfiles %}
+<html>  
+    <head>
+        <style>
+            #myProgress {
+                position: relative;
+                height: 30px;
+                background-color: #ddd;
+                margin-top: 0px;
+                margin-left: 0px;
+            }
+
+            #myBar {
+                position: absolute;
+                width: 10%;
+                height:21px;
+                margin-top:0px;
+                margin-left: -1px;
+                background-color: #4CAF50;
+            }
+
+            #label {
+                text-align: center;
+                line-height: 11px;
+                background-color: #4CAF50;
+                height: 11px;
+                color: white;
+                margin-top:0px;
+            }
+
+            #pri{
+                height: 380px;
+            }
+
+            #pri2 {
+                margin-top: 30px;
+                margin-left: 110px;
+                height: 40px;
+            }
+
+            div.polaroid {
+                width: 450px;
+                height: 300px;
+                background-color: white;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                margin-top:-20px;
+                margin-left: 230px;
+                position: relative;
+            }
+
+            div.container {
+                text-align: center;
+                padding: 10px 20px;
+            }
+        </style>
+    </head>
+
+    <body onload="both()">
+        <div class="polaroid">
+            <img id="image" src="{% static 'img/paraiso.jpg' %}">
+        </div>
+        <div class="dentro" id="pri2">
+            <div id="myProgress">
+                <div id="myBar">
+                    <div id="label">10%</div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function both(){
+                imageChanger();
+                move();
+            }
+
+            function imageChanger(){
+                var image = document.getElementById("image");
+                switch(Math.floor(Math.random() * 3) + 1){
+                    case 1 :
+                        image.src = "{% static 'img/paraiso.jpg' %}";
+                        break;
+                    case 2 :
+                        image.src = "{% static 'img/nieve.jpg' %}";
+                        break;
+                    case 3:
+                        image.src = "{% static 'img/otoño.jpg' %}";
+                        break;
+                }
+                setTimeout(imageChanger, 5000);
+            }
+
+
+            function move() {
+                var elem = document.getElementById("myBar");   
+                var width = 10;
+                var pro = 12;
+                var id = setInterval(frame, 56);
+
+                function frame() {
+                    if (width == 98 & pro == 100) {
+                        clearInterval(id);
+                        move();
+                    } else {
+                        pro++;
+                        width++; 
+                        elem.style.width = width + '%'; 
+                        document.getElementById("label").innerHTML = pro * 1  + '%';
+                    }
+                }
+            }
+        </script>
+
+    </body>
+</html>

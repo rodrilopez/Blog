@@ -1,0 +1,179 @@
+body {
+    background-color: #464545;
+}
+
+.title {
+    background-color: #464545 !important;
+    font-weight: 900;
+    color: #a3a3a3 ;
+    text-decoration: none ;
+    margin-top: 25px;
+    margin-left: 10px;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 35px;
+}
+
+#ho {
+    color: #a3a3a3 !important;
+    text-decoration: none !important;
+}
+
+j{
+    color: #34bf3a;
+}
+
+
+.sub-title {
+    background-color: #464545 !important;
+    font-weight: 400;
+    margin-top: 40px;
+    margin-left: 900px;
+    letter-spacing: 4px;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 16px;
+}
+
+div {
+    background-color: #bebebe;
+    border:none;
+    position: fixed;
+    padding: 5px 5px;
+    margin-top:100px;
+    margin-left: 12px;
+}
+
+.principal{
+    z-index:0;
+    margin-left: 28%;
+    width: 69.5%;
+    height: 80%;
+}
+
+.propaganda {
+    z-index:0;
+    margin-left: 13px;
+    height: 80%;
+    width: 25%;
+}
+
+.dentro {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #f1f1f1;
+    height: 200px;
+    width: 96%;
+    position:relative;
+    margin-left: 13px;
+    margin-bottom: 13px;
+}
+
+#pri {
+    margin-top: 30px;
+}
+
+h3 {
+    font-weight: 400;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 24px;
+
+}
+
+h2 {
+    font-weight: 400;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-size: 30px;
+}
+
+h4 {
+    font-weight: 400;
+    margin-top: 10px;
+    margin-left: 25px;
+    font-family: "Segoe UI",Arial,sans-serif;   
+}
+
+
+div.img {
+    margin-left: 750px;
+    background: #f1f1f1;
+    margin-top: -53px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 120px;
+    position: absolute;
+}	
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    margin-top: 5px;
+    margin-left: -5px;
+    text-align: center;
+    position: relative;
+    display: block;
+    width: 100px;
+}
+
+
+.btnmove {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #26A69A;
+  border: none;
+  color: #FFFFFF;
+  text-align: center !important;
+  font-size: 15px;
+  padding: 5;
+  padding-top: 10;
+  padding-bottom:0; 
+  width: 100px;
+  height: 30px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 85px;    
+}
+
+.btnmove span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btnmove span:after {
+  content: ">";
+  position: absolute;
+  opacity: 0;
+  font-size: 15px;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btnmove:hover span {
+  padding-right: 25px;
+}
+
+.btnmove:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.txtdentro {
+    position: absolute;
+    margin-top: -10px;
+    background-color: #f8f8f8;
+    margin-left: 17px;
+    width: 700px
+}
